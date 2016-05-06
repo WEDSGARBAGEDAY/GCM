@@ -2,4 +2,6 @@
     <string name="app_name">GCM_test</string>
     <string name="action_settings">Settings</string>
     <string name="get_id">Get RegID</string>
+    <string name="MSG_PRE">Visited  </string>
+    <string name="API_KEY">AIzaSyAtIO2uIsab99P58REOY8dfv0_jwg_oRfE</string>
 </resources>

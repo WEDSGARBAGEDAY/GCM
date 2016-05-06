@@ -19,9 +19,9 @@ public class App {
     public static Content createContent() {
         Content c = new Content();
 
-        c.addRegId("");
+        c.addRegId("APA91bF0YOtrFEkK8IOwxeQ3jE_Ew9U9EKSE6EkP1KIQmqHDQqWmyeoSj31lYZYdRauNSinmq1rztGl3K4YQkGZLjLUcYrYsBO03zscPrmfo7O8utq_qC-hgFjv0w5RmGXp7orxcTO66");
 
-        c.createData("Working!!", "Test message");
+        c.createData("Glynn", "Anor Londo");
 
         return c;
     }

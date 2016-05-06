@@ -1,4 +1,4 @@
-package com.example.server.vo;
+package com.example.agneev.gcm_test;
 
 /**
  * Created by Agneev on 22-04-2016.

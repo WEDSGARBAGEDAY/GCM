@@ -17,6 +17,7 @@ import java.io.IOException;
 public class MainActivity extends AppCompatActivity implements OnClickListener{
 
     Button btnRegId;
+    Button btnSndMsg;
     EditText etRegId;
     GoogleCloudMessaging gcm;
     String regid;
@@ -27,10 +28,12 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnRegId = (Button) findViewById(R.id.button);
+        btnRegId = (Button) findViewById(R.id.button_get_id);
         etRegId = (EditText) findViewById(R.id.edit_text_id);
+        btnSndMsg = (Button) findViewById(R.id.button);
 
         btnRegId.setOnClickListener(this);
+        btnSndMsg.setOnClickListener(this);
     }
 
     public void getRegId() {
@@ -63,8 +66,22 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
 
     @Override
     public void onClick(View v) {
-        getRegId();
+        switch (v.getId()) {
+            case R.id.button_get_id:
+                getRegId();
+                break;
+            case R.id.button:
+                sendMessage();
+                break;
+        }
     }
 
-
+    public void sendMessage(){
+        Log.i("GCM", "Sending message");
+        Message message = new Message(getString(R.string.API_KEY), "APA91bF0YOtrFEkK8IOwxeQ3jE_Ew9U9EKSE6EkP1KIQmqHDQqWmyeoSj31lYZYdRauNSinmq1rztGl3K4YQkGZLjLUcYrYsBO03zscPrmfo7O8utq_qC-hgFjv0w5RmGXp7orxcTO66",
+                "Glynn", "Anor Londo");
+        Thread sender = new Thread(message);
+        sender.start();
+    }
 }
+
